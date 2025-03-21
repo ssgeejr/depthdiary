@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        <h1>DepthDiary</h1>
+        <img src="images/depthdiary.png" alt="DepthDiary Logo" class="logo">
     </header>
 
     <section class="blurb">
