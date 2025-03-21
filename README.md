@@ -73,3 +73,12 @@ Below are the common elements and associated details DepthDiary will support for
 
 This project is licensed under the Apache License, Version 2.0. See the [LICENSE](LICENSE) file for details.
 
+
+## TODO 
+
+Provide sample SQL to insert a test user.
+
+## TESTING
+
+`docker exec -it depthdiary_mysql mysql -u depthdiary_user -pdepthdiary_pass depthdiary -e "SHOW TABLES;"`
+

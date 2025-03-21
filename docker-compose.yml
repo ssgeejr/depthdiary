@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  tomcat:
+    image: tomcat:8.5-jre8
+    container_name: depthdiary_tomcat
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./tomcat/webapps:/usr/local/tomcat/webapps
+    environment:
+      - JAVA_OPTS=-Xms512m -Xmx1024m
+    depends_on:
+      - mysql
+    networks:
+      - depthdiary_network
+
+  mysql:
+    image: mysql:5.5
+    container_name: depthdiary_mysql
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=rootpassword
+      - MYSQL_DATABASE=depthdiary
+      - MYSQL_USER=depthdiary_user
+      - MYSQL_PASSWORD=depthdiary_pass
+    volumes:
+      - ./mysql/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - mysql_data:/var/lib/mysql
+    networks:
+      - depthdiary_network
+
+volumes:
+  mysql_data:
+
+networks:
+  depthdiary_network:
+    driver: bridge

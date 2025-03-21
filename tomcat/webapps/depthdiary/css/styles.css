@@ -1,0 +1,102 @@
+/* Oceanic dark blue for text */
+:root {
+    --ocean-blue: #1A3C5A; /* Dark, deep blue inspired by the ocean */
+    --text-box-bg: #F0F8FF; /* Alice Blue - light, readable background */
+    --red-border: #FF0000;  /* Red for 1px borders */
+}
+
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    color: var(--ocean-blue);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    padding: 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+/* Blurb */
+.blurb {
+    padding: 20px;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Main content (login section) */
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container {
+    text-align: center;
+}
+
+.login-container h2 {
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin: 15px 0;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    width: 200px;
+    padding: 8px;
+    border: 1px solid var(--red-border);
+    background-color: var(--text-box-bg);
+    color: var(--ocean-blue);
+    font-size: 1em;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: var(--ocean-blue);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+button:hover {
+    background-color: #143047; /* Slightly darker shade on hover */
+}
+
+.create-account {
+    margin-top: 10px;
+}
+
+.create-account a {
+    color: var(--ocean-blue);
+    text-decoration: none;
+}
+
+.create-account a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    font-size: 0.9em;
+}
