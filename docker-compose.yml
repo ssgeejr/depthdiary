@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   tomcat:
     image: tomcat:8.5-jre8
@@ -25,14 +23,13 @@ services:
       - MYSQL_DATABASE=depthdiary
       - MYSQL_USER=depthdiary_user
       - MYSQL_PASSWORD=depthdiary_pass
+    security_opt:
+      - seccomp:unconfined
     volumes:
-      - ./mysql/init.sql:/docker-entrypoint-initdb.d/init.sql
-      - mysql_data:/var/lib/mysql
+      - ./mysql:/docker-entrypoint-initdb.d/:ro
+      - /opt/apps/depthdiary:/var/lib/mysql
     networks:
       - depthdiary_network
-
-volumes:
-  mysql_data:
 
 networks:
   depthdiary_network:
