@@ -27,7 +27,7 @@ services:
       - seccomp:unconfined
     volumes:
       - ./mysql:/docker-entrypoint-initdb.d/:ro
-      - /opt/apps/depthdiary:/var/lib/mysql
+      - /opt/db/depthdiary:/var/lib/mysql
     networks:
       - depthdiary_network
 
